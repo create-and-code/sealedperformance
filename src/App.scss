@@ -1,0 +1,12 @@
+// Colour variables
+$black: #191919;
+$red: #cc0000;
+
+// Padding variables
+$pad: 15px;
+
+// Import style sheets
+@import "styles/header.scss";
+@import "styles/nav.scss";
+@import "styles/category.scss";
+@import "styles/button.scss";
