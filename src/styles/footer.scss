@@ -1,0 +1,42 @@
+footer {
+  background: $black;
+  padding: $pad * 2 0;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .social {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+
+    a {
+      color: white;
+      font-size: 30px;
+      transition: 0.5s ease;
+      margin-left: $pad * 1.5;
+
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+
+  .footerlinks {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    color: white;
+    font-size: 14px;
+
+    a {
+      color: white;
+      margin-bottom: 5px;
+    }
+  }
+}

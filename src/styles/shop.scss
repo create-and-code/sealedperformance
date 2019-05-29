@@ -1,0 +1,42 @@
+.shop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__products {
+    width: 80%;
+  }
+
+  .list-group {
+    width: 20%;
+    margin-right: $pad * 2;
+  }
+
+  .list-group-item.active,
+  .page-item.active .page-link {
+    background-color: $red;
+    border-color: $red;
+  }
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  input {
+    width: 70%;
+    margin: 0 !important;
+  }
+}
+
+.pagination {
+  margin-top: $pad * 2;
+  margin-bottom: 0;
+
+  .page-item {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -8,13 +8,18 @@
     "font-awesome": "^4.7.0",
     "joi-browser": "^13.4.0",
     "jwt-decode": "^2.2.0",
+    "lodash": "^4.17.10",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-image-gallery": "^0.8.16",
+    "react-redux": "^7.0.3",
     "react-responsive-carousel": "^3.1.49",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.8",
-    "react-toastify": "^4.1.0"
+    "react-toastify": "^4.1.0",
+    "redux": "^4.0.1",
+    "redux-form": "^8.2.1"
   },
   "scripts": {
     "start": "react-scripts start",

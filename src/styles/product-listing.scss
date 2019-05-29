@@ -1,0 +1,46 @@
+.product-listing {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1;
+  margin-left: -$pad;
+  margin-right: -$pad;
+  margin-top: $pad * 2;
+
+  .item {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 $pad $pad * 2;
+
+    a {
+      display: block;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    h4 {
+      color: $grey;
+      text-transform: capitalize;
+    }
+
+    p {
+      color: $grey;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: $pad;
+    }
+
+    button {
+      width: 100%;
+
+      &:hover {
+        background: $red;
+      }
+    }
+  }
+}

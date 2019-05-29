@@ -1,12 +1,45 @@
+// Import fonts
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:200,400,700&display=swap");
+@import "node_modules/react-image-gallery/styles/scss/image-gallery.scss";
+
 // Colour variables
 $black: #191919;
+$grey: #333;
 $red: #cc0000;
 
 // Padding variables
 $pad: 15px;
+
+// Font variables
+$body: "Titillium Web", sans-serif;
+
+// Generic css
+body {
+  font-family: $body !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.page,
+.section {
+  padding: $pad * 2 0;
+}
 
 // Import style sheets
 @import "styles/header.scss";
 @import "styles/nav.scss";
 @import "styles/category.scss";
 @import "styles/button.scss";
+@import "styles/footer.scss";
+@import "styles/service.scss";
+@import "styles/products.scss";
+@import "styles/product-listing.scss";
+@import "styles/shop.scss";

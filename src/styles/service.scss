@@ -1,0 +1,34 @@
+.service {
+  background: $black;
+  color: white;
+  text-align: center;
+  padding: $pad * 2;
+  border-radius: 20px;
+
+  i {
+    color: white;
+    background: $red;
+    padding: 15px;
+    border-radius: 100%;
+    font-size: 30px;
+    margin-bottom: $pad * 2;
+  }
+
+  h3 {
+    margin: 0;
+
+    &:after {
+      height: 1px;
+      width: 40px;
+      background: #fff;
+      content: "";
+      display: block;
+      margin: $pad * 1.5 auto;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    margin: 0;
+  }
+}

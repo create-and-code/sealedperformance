@@ -1,10 +1,12 @@
 button {
   color: white;
-  border: 1px solid white;
-  padding: 15px 30px;
-  background: transparent;
-  text-transform: uppercase !important;
-  font-size: 20px !important;
-  letter-spacing: 5px;
+  padding: 10px 20px;
+  background: $grey;
+  font-size: 14px;
+  letter-spacing: 1px;
   transition: 0.5s ease;
+}
+
+button:focus {
+  outline: none !important;
 }

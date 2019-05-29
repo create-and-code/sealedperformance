@@ -1,5 +1,7 @@
 .nav {
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+
   ul {
     padding: 0;
     margin: 0;
@@ -10,6 +12,40 @@
       a {
         color: white;
       }
+    }
+  }
+
+  &__login {
+    display: block;
+    background: $red;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: $pad !important;
+  }
+
+  &__links {
+    padding-bottom: $pad !important;
+  }
+
+  .basket {
+    display: flex;
+    align-items: center;
+
+    i {
+      font-size: 25px;
+    }
+
+    span {
+      margin-left: 5px;
+      margin-top: -15px;
+      background: $red;
+      border-radius: 100%;
+      width: 25px;
+      height: 25px;
+      padding: 2px;
+      display: inline-block;
+      text-align: center;
+      font-size: 14px;
     }
   }
 }
