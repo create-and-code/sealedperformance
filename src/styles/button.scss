@@ -1,12 +1,28 @@
-button {
+button,
+.btn {
   color: white;
-  padding: 10px 20px;
+  padding: 5px 10px;
   background: $grey;
   font-size: 14px;
   letter-spacing: 1px;
   transition: 0.5s ease;
-}
 
-button:focus {
-  outline: none !important;
+  &__basket {
+    width: 155px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background: $red;
+    }
+
+    .fa {
+      font-size: 30px;
+      margin-left: $pad;
+    }
+  }
+
+  &:focus {
+    outline: none !important;
+  }
 }

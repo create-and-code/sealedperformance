@@ -3,7 +3,7 @@ import ProductListItem from "./productListItem";
 import { connect } from "react-redux";
 
 const ProductListing = props => {
-  const { addToBasket, removeFromBasket, products, basket } = props;
+  const { addToBasket, products } = props;
 
   return (
     <div className="product-listing">
@@ -12,10 +12,6 @@ const ProductListing = props => {
           product={product}
           key={product._id}
           addToBasket={addToBasket}
-          removeFromBasket={removeFromBasket}
-          basketItem={
-            basket.filter(basketItem => basketItem._id === product._id)[0]
-          }
         />
       ))}
     </div>

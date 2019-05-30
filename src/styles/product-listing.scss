@@ -11,6 +11,9 @@
     flex: 0 0 33.33%;
     max-width: 33.33%;
     padding: 0 $pad $pad * 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 
     a {
       display: block;
@@ -26,21 +29,14 @@
     }
 
     p {
-      color: $grey;
+      color: $red;
+      font-weight: bold;
     }
 
     img {
       width: 100%;
       height: auto;
       margin-bottom: $pad;
-    }
-
-    button {
-      width: 100%;
-
-      &:hover {
-        background: $red;
-      }
     }
   }
 }

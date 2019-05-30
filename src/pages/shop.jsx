@@ -21,7 +21,7 @@ class Shop extends Component {
 
   async componentDidMount() {
     const categoryData = await getCategories();
-    const categories = [{ _id: "", name: "All Categories" }, ...categoryData];
+    const categories = [{ _id: "01", name: "All Categories" }, ...categoryData];
 
     const products = await getProducts();
     this.setState({ products, categories });

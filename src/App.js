@@ -10,7 +10,7 @@ import RegisterForm from "./components/registerForm";
 import Logout from "./components/logout";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import Product from "./pages/product";
+import ProductPage from "./pages/productPage";
 import Basket from "./pages/basket";
 import CheckoutPage from "./pages/checkout";
 import OrdersPage from "./pages/orders";
@@ -25,15 +25,15 @@ class App extends Component {
         <main>
           <Switch>
             <Route exact path="/" component={Homepage} />
-            <Route path="/product/:id" component={Product} />
-            <Route path="/shop" component={Shop} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/basket" component={Basket} />
-            <Route path="/checkout" component={CheckoutPage} />
+            <Route exact path="/shop" component={Shop} />
+            <Route path="/shop/product/:id" component={ProductPage} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/basket" component={Basket} />
+            <Route exact path="/checkout" component={CheckoutPage} />
             <Route path="/orders/:id" component={OrdersPage} />
-            <Route path="/register" component={RegisterForm} />
-            <Route path="/login" component={LoginForm} />
-            <Route path="/logout" component={Logout} />
+            <Route exact path="/register" component={RegisterForm} />
+            <Route exact path="/login" component={LoginForm} />
+            <Route exact path="/logout" component={Logout} />
             <Route path="/not-found" component={NotFound} />
             <Redirect from="/" to="/home" />
             <Redirect to="/not-found" />
