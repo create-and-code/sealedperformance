@@ -38,13 +38,13 @@ const NavBar = ({ user, basket }) => {
         </ul>
         <ul className="nav__links">
           <li className="nav__item">
-            <NavLink className="nav-link" to="/shop">
-              Shop
+            <NavLink className="nav-link" to="/">
+              Home
             </NavLink>
           </li>
           <li className="nav__item">
-            <NavLink className="nav-link" to="/events">
-              Events
+            <NavLink className="nav-link" to="/shop">
+              Shop
             </NavLink>
           </li>
           <li className="nav__item">
@@ -52,19 +52,19 @@ const NavBar = ({ user, basket }) => {
               Contact
             </NavLink>
           </li>
+          <li className="nav__item checkout">
+            <NavLink className="nav-link" to="/checkout">
+              Checkout
+            </NavLink>
+          </li>
           <li className="nav__item">
             <NavLink className="nav-link basket" to="/basket">
               <i className="fa fa-shopping-basket" aria-hidden="true" />
               <span>
-                {basket.reduce((acc, item) => {
+                {basket.items.reduce((acc, item) => {
                   return acc + item.quantity;
                 }, 0)}
               </span>
-            </NavLink>
-          </li>
-          <li className="nav__item">
-            <NavLink className="nav-link" to="/checkout">
-              Checkout
             </NavLink>
           </li>
         </ul>

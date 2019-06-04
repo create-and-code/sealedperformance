@@ -9,6 +9,14 @@
     li {
       display: inline-block;
 
+      &.checkout {
+        border-left: 2px solid $lightgrey;
+      }
+
+      &:first-child {
+        border-right: 2px solid $black;
+      }
+
       a {
         color: white;
       }
@@ -30,6 +38,8 @@
   .basket {
     display: flex;
     align-items: center;
+    padding-right: 0;
+    padding-left: 0;
 
     i {
       font-size: 25px;

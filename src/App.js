@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import Homepage from "./pages/homepage";
+import HomePage from "./pages/homePage";
 import Shop from "./pages/shop";
-import Contact from "./pages/contact";
+import ContactPage from "./pages/contactPage";
 import NotFound from "./components/notFound";
 import LoginForm from "./components/loginForm";
 import RegisterForm from "./components/registerForm";
@@ -11,9 +11,9 @@ import Logout from "./components/logout";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import ProductPage from "./pages/productPage";
-import Basket from "./pages/basket";
-import CheckoutPage from "./pages/checkout";
-import OrdersPage from "./pages/orders";
+import BasketPage from "./pages/basketPage";
+import CheckoutPage from "./pages/checkoutPage";
+import OrdersPage from "./pages/ordersPage";
 import "./App.scss";
 
 class App extends Component {
@@ -24,11 +24,11 @@ class App extends Component {
         <Header />
         <main>
           <Switch>
-            <Route exact path="/" component={Homepage} />
+            <Route exact path="/" component={HomePage} />
             <Route exact path="/shop" component={Shop} />
             <Route path="/shop/product/:id" component={ProductPage} />
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/basket" component={Basket} />
+            <Route exact path="/contact" component={ContactPage} />
+            <Route exact path="/basket" component={BasketPage} />
             <Route exact path="/checkout" component={CheckoutPage} />
             <Route path="/orders/:id" component={OrdersPage} />
             <Route exact path="/register" component={RegisterForm} />

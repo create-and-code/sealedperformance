@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import Cart from "../basket/basket";
+import Basket from "../basket/basket";
 import CheckoutForm from "./form";
 import http from "../../services/httpService";
 
@@ -35,7 +35,7 @@ const Checkout = props => {
   return (
     <React.Fragment>
       <h1>Checkout</h1>
-      <Cart />
+      <Basket />
       <CheckoutForm onSubmit={values => submitOrder(values, basket)} />
     </React.Fragment>
   );

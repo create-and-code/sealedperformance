@@ -31,13 +31,12 @@ class Order extends Component {
           {order_items &&
             order_items.map(item => {
               const {
-                product,
                 qty,
                 product: { name, image, price }
               } = item;
               return (
                 <li>
-                  <img src={image} />
+                  <img src={image} alt={name} />
                   {name}({qty} @ £{price} = £
                   {parseFloat(qty) * parseFloat(price)})
                 </li>

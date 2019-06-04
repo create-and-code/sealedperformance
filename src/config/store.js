@@ -1,10 +1,8 @@
 import { createStore, combineReducers } from "redux";
-import { reducer as formReducer } from "redux-form";
 import BasketReducer from "../components/basket/reducer";
 
 const rootReducer = combineReducers({
-  basket: BasketReducer,
-  form: formReducer
+  basket: BasketReducer
 });
 
 const store = createStore(

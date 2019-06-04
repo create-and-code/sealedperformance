@@ -11,7 +11,7 @@ const ProductItem = ({ product, addToBasket }) => {
         <p>{product.desc}</p>
 
         <button onClick={() => addToBasket(product)} className="btn__basket">
-          Add to basket <i class="fa fa-angle-right" aria-hidden="true" />
+          Add to basket <i className="fa fa-angle-right" aria-hidden="true" />
         </button>
       </div>
     </div>

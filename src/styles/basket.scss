@@ -1,0 +1,105 @@
+.basketpage {
+  display: flex;
+  flex-direction: row;
+}
+
+.basket {
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid $grey;
+    padding: $pad * 2 0 0;
+    margin-top: $pad * 2;
+    position: relative;
+  }
+
+  &__item-img {
+    width: 40%;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &__item-info {
+    width: 50%;
+
+    p {
+      &:first-child {
+        font-weight: bold;
+        font-size: 22px;
+      }
+
+      span {
+        font-weight: bold;
+        font-size: 22px;
+      }
+    }
+
+    button {
+      border: 0;
+      background: none;
+
+      .fa {
+        color: $red;
+      }
+    }
+  }
+
+  &__item-remove {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    background: none;
+    color: $grey;
+    border: 0;
+    font-size: 30px;
+  }
+}
+
+.summary {
+  background: $grey;
+  padding: $pad;
+  color: white;
+  margin-left: $pad * 2;
+  width: 500px;
+
+  h2 {
+    border-bottom: 1px solid white;
+    padding-bottom: $pad;
+    margin-bottom: $pad;
+  }
+
+  &__info {
+    p {
+      font-weight: bold;
+    }
+
+    span {
+      display: block;
+
+      input {
+        margin-right: 10px;
+      }
+    }
+
+    table {
+      border-top: 1px solid white;
+      width: 100%;
+      padding-top: $pad;
+      margin-top: $pad;
+      display: block;
+
+      tr {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

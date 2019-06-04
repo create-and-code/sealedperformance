@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Slider from "../components/common/carousel";
 import { Link } from "react-router-dom";
 
-class Homepage extends Component {
+class HomePage extends Component {
   state = {
     images: [
       { id: 1, name: "Slider 1", src: "images/slider/slide-1.jpg" },
@@ -125,4 +125,4 @@ class Homepage extends Component {
   }
 }
 
-export default Homepage;
+export default HomePage;

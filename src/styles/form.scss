@@ -1,0 +1,46 @@
+.form {
+  background: $grey;
+  padding: $pad * 2;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: $pad * 2;
+
+  @media only screen and (max-width: 550px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .form-group {
+    width: 48%;
+
+    @media only screen and (max-width: 550px) {
+      width: 100%;
+    }
+
+    input {
+      border-radius: 0;
+    }
+
+    textarea {
+      min-height: 150px;
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    background: $red !important;
+    font-size: 16px;
+    letter-spacing: 3px;
+    border: 0;
+    text-transform: uppercase;
+    border-radius: 0;
+    margin-top: $pad;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+}

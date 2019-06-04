@@ -44,12 +44,13 @@ class RegisterForm extends Form {
 
   render() {
     return (
-      <div>
+      <div className="container page">
         <h1>Register</h1>
-        <form onSubmit={this.handleSubmit}>
-          {this.renderInput("username", "Username")}
-          {this.renderInput("password", "Password", "password")}
-          {this.renderInput("name", "Name")}
+        <form onSubmit={this.handleSubmit} className="form">
+          {this.renderInput("firstname", "First Name *")}
+          {this.renderInput("lastname", "Last Name *")}
+          {this.renderInput("email", "Email *", "email")}
+          {this.renderInput("password", "Password *", "password")}
           {this.renderButton("Register")}
         </form>
       </div>

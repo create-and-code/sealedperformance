@@ -5,6 +5,7 @@
 // Colour variables
 $black: #191919;
 $grey: #333;
+$lightgrey: #d3d3d3;
 $red: #cc0000;
 
 // Padding variables
@@ -43,3 +44,6 @@ h6 {
 @import "styles/products.scss";
 @import "styles/product-listing.scss";
 @import "styles/shop.scss";
+@import "styles/contact.scss";
+@import "styles/form.scss";
+@import "styles/basket.scss";
