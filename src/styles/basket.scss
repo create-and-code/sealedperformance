@@ -58,6 +58,20 @@
     border: 0;
     font-size: 30px;
   }
+
+  &__noitems {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    .btn {
+      background: $red;
+      width: 155px;
+      font-size: 16px;
+    }
+  }
 }
 
 .summary {

@@ -1,11 +1,13 @@
 button,
-.btn {
+.btn,
+a.btn {
   color: white;
   padding: 5px 10px;
   background: $grey;
   font-size: 14px;
   letter-spacing: 1px;
   transition: 0.5s ease;
+  border-radius: 0;
 
   &__basket {
     width: 155px;

@@ -33,7 +33,6 @@ const removeFromBasket = (basket, item) => {
         ];
 
   const total = basket.total - item.price;
-
   return { items, total };
 };
 
@@ -43,8 +42,6 @@ const removeAllFromBasket = (basket, item) => {
     (result, item) => result + item.price * item.quantity,
     0
   );
-  console.log(items, total);
-
   return { items, total };
 };
 

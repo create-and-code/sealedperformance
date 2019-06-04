@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import PaypalExpressBtn from "react-paypal-express-checkout";
 
 const CLIENT = {
@@ -22,7 +23,14 @@ class Basket extends Component {
     const { items, total } = this.props.basket;
     return (
       <React.Fragment>
-        {items.length === 0 && <p>You have no items in your basket.</p>}
+        {items.length === 0 && (
+          <div className="basket__noitems">
+            <p>You have no items in your basket.</p>
+            <Link to="/shop" className="btn">
+              Shop
+            </Link>
+          </div>
+        )}
 
         {items.length > 0 && (
           <div className="basketpage">
@@ -116,7 +124,11 @@ class Basket extends Component {
                 </table>
               </div>
 
-              <PaypalExpressBtn client={CLIENT} currency={"GBP"} total={0} />
+              <PaypalExpressBtn
+                client={CLIENT}
+                currency={"GBP"}
+                total={total + this.state.delivery}
+              />
             </div>
           </div>
         )}

@@ -12,7 +12,6 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import ProductPage from "./pages/productPage";
 import BasketPage from "./pages/basketPage";
-import CheckoutPage from "./pages/checkoutPage";
 import OrdersPage from "./pages/ordersPage";
 import "./App.scss";
 
@@ -29,7 +28,6 @@ class App extends Component {
             <Route path="/shop/product/:id" component={ProductPage} />
             <Route exact path="/contact" component={ContactPage} />
             <Route exact path="/basket" component={BasketPage} />
-            <Route exact path="/checkout" component={CheckoutPage} />
             <Route path="/orders/:id" component={OrdersPage} />
             <Route exact path="/register" component={RegisterForm} />
             <Route exact path="/login" component={LoginForm} />

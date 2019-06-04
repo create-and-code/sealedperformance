@@ -53,7 +53,7 @@ const NavBar = ({ user, basket }) => {
             </NavLink>
           </li>
           <li className="nav__item checkout">
-            <NavLink className="nav-link" to="/checkout">
+            <NavLink className="nav-link" to="/basket">
               Checkout
             </NavLink>
           </li>
