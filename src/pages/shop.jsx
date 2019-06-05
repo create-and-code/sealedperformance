@@ -85,7 +85,7 @@ class Shop extends Component {
 
     if (searchQuery)
       filtered = allProducts.filter(p =>
-        p.title.toLowerCase().startsWith(searchQuery.toLowerCase())
+        p.title.toLowerCase().includes(searchQuery.toLowerCase())
       );
     else if (selectedCategory && selectedCategory._id)
       filtered = allProducts.filter(
