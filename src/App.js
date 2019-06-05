@@ -25,13 +25,17 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/shop" component={Shop} />
+            <Route exact path="/shop/:category" component={Shop} />
             <Route path="/shop/product/:id" component={ProductPage} />
             <Route exact path="/contact" component={ContactPage} />
+
             <Route exact path="/basket" component={BasketPage} />
             <Route path="/orders/:id" component={OrdersPage} />
+
             <Route exact path="/register" component={RegisterForm} />
             <Route exact path="/login" component={LoginForm} />
             <Route exact path="/logout" component={Logout} />
+
             <Route path="/not-found" component={NotFound} />
             <Redirect from="/" to="/home" />
             <Redirect to="/not-found" />

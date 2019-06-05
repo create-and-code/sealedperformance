@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Slider from "../components/common/carousel";
 import { Link } from "react-router-dom";
+import { getCategories } from "../services/categoryService";
 
 class HomePage extends Component {
   state = {
@@ -9,75 +10,35 @@ class HomePage extends Component {
       { id: 2, name: "Slider 2", src: "images/slider/slide-2.jpg" },
       { id: 3, name: "Slider 3", src: "images/slider/slide-3.jpg" },
       { id: 4, name: "Slider 4", src: "images/slider/slide-4.jpg" }
-    ]
+    ],
+    categories: []
   };
 
+  async componentDidMount() {
+    const categories = await getCategories();
+    this.setState({ categories });
+  }
+
   render() {
+    const { categories } = this.state;
+
     return (
       <React.Fragment>
         <Slider images={this.state.images} />
 
         <div className="row categories">
-          <div className="col-4">
-            <div className="category">
-              <img src="/images/products/washers.jpg" alt="" />
-              <div className="category__overlay">
-                <Link to="/shop">
-                  <button>Category 1</button>
-                </Link>
+          {categories.map(category => (
+            <div className="col-4">
+              <div className="category">
+                <img src={category.image} alt={category.name} />
+                <div className="category__overlay">
+                  <Link to={`/shop/${category.name}`}>
+                    <button>{category.name}</button>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="col-4">
-            <div className="category">
-              <img src="/images/products/washers.jpg" alt="" />
-              <div className="category__overlay">
-                <Link to="/shop">
-                  <button>Category 2</button>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="col-4">
-            <div className="category">
-              <img src="/images/products/washers.jpg" alt="" />
-              <div className="category__overlay">
-                <Link to="/shop">
-                  <button>Category 3</button>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="col-4">
-            <div className="category">
-              <img src="/images/products/washers.jpg" alt="" />
-              <div className="category__overlay">
-                <Link to="/shop">
-                  <button>Category 4</button>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="col-4">
-            <div className="category">
-              <img src="/images/products/washers.jpg" alt="" />
-              <div className="category__overlay">
-                <Link to="/shop">
-                  <button>Category 5</button>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="col-4">
-            <div className="category">
-              <img src="/images/products/washers.jpg" alt="" />
-              <div className="category__overlay">
-                <Link to="/shop">
-                  <button>Category 6</button>
-                </Link>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className="container section">
@@ -97,7 +58,11 @@ class HomePage extends Component {
             <div className="col-4">
               <div className="service">
                 <i className="fa fa-clock-o" aria-hidden="true" />
-                <h3>Fast delivery</h3>
+                <h3>
+                  Fast
+                  <br />
+                  delivery
+                </h3>
                 <p>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Suscipit laborum, reprehenderit, eligendi et explicabo nobis

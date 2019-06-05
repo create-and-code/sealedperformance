@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Filter from "../components/common/filter";
 import ProductListing from "../components/productListing/productListing";
 import { getCategories } from "../services/categoryService";
+import { getCategory } from "../services/categoryService";
 import { getProducts } from "../services/productService";
 import { paginate } from "../utils/paginate";
 import Pagination from "../components/common/pagination";
@@ -19,12 +20,33 @@ class Shop extends Component {
     selectedCategory: null
   };
 
+  async populateCategory() {
+    try {
+      const categoryName = this.props.match.params.category;
+      if (categoryName !== undefined) {
+        const category = await getCategory(categoryName)[0];
+        this.setState({
+          selectedCategory: category,
+          searchQuery: "",
+          currentPage: 1
+        });
+      } else {
+        return;
+      }
+    } catch (ex) {
+      if (ex.response && ex.response.status === 404)
+        this.props.history.replace("/not-found");
+    }
+  }
+
   async componentDidMount() {
     const categoryData = await getCategories();
     const categories = [{ _id: "", name: "All Categories" }, ...categoryData];
 
     const products = await getProducts();
     this.setState({ products, categories });
+
+    await this.populateCategory();
   }
 
   handlePageChange = page => {
@@ -45,6 +67,8 @@ class Shop extends Component {
       searchQuery: "",
       currentPage: 1
     });
+
+    this.props.history.push(`/shop/${category.name}`);
   };
 
   getPagedData = () => {
