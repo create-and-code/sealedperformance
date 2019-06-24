@@ -43,7 +43,7 @@ class Shop extends Component {
     const { data } = await getCategories();
     const categories = [{ _id: "", name: "All Categories" }, ...data];
 
-    const products = await getProducts();
+    const { data: products } = await getProducts();
     this.setState({ products, categories });
 
     await this.populateCategory();

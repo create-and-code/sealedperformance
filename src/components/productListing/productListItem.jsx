@@ -5,7 +5,7 @@ const ProductListItem = ({ product, addToBasket }) => {
   return (
     <div className="item">
       <Link to={`/shop/product/${product._id}`}>
-        <img src={product.imgs[0].thumbnail} alt={product.title} />
+        <img src={product.images[0].thumbnail} alt={product.title} />
         <h4>{product.title}</h4>
         <p>£{product.price}</p>
       </Link>

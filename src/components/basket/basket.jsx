@@ -39,7 +39,7 @@ class Basket extends Component {
               {sort(items).map(item => (
                 <div className="basket__item">
                   <div className="basket__item-img">
-                    <img src={item.imgs[0].original} alt={item.title} />
+                    <img src={item.images[0].original} alt={item.title} />
                   </div>
                   <div className="basket__item-info">
                     <p>£{item.price}</p>
@@ -58,7 +58,10 @@ class Basket extends Component {
                     <p>
                       Subtotal: &nbsp;
                       <span>
-                        £{parseFloat(item.quantity) * parseFloat(item.price)}
+                        £
+                        {(
+                          parseFloat(item.quantity) * parseFloat(item.price)
+                        ).toFixed(2)}
                       </span>
                     </p>
                     <button
@@ -118,7 +121,7 @@ class Basket extends Component {
                   <tr>
                     <td style={{ fontWeight: 900 }}>Order Total</td>
                     <td style={{ fontWeight: 900 }}>
-                      {total + this.state.delivery}
+                      {(total + this.state.delivery).toFixed(2)}
                     </td>
                   </tr>
                 </table>
@@ -127,7 +130,7 @@ class Basket extends Component {
               <PaypalExpressBtn
                 client={CLIENT}
                 currency={"GBP"}
-                total={total + this.state.delivery}
+                total={(total + this.state.delivery).toFixed(2)}
               />
             </div>
           </div>
