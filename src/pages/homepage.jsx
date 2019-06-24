@@ -15,8 +15,8 @@ class HomePage extends Component {
   };
 
   async componentDidMount() {
-    const categories = await getCategories();
-    this.setState({ categories });
+    const { data } = await getCategories();
+    this.setState({ categories: data });
   }
 
   render() {
@@ -30,7 +30,7 @@ class HomePage extends Component {
           {categories.map(category => (
             <div className="col-4">
               <div className="category">
-                <img src={category.image} alt={category.name} />
+                <img src={`images/${category.image_src}`} alt={category.name} />
                 <div className="category__overlay">
                   <Link to={`/shop/${category.name}`}>
                     <button>{category.name}</button>
