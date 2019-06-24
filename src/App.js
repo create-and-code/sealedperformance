@@ -13,6 +13,7 @@ import Footer from "./components/footer";
 import ProductPage from "./pages/productPage";
 import BasketPage from "./pages/basketPage";
 import OrdersPage from "./pages/ordersPage";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.scss";
 
 class App extends Component {

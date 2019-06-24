@@ -1,6 +1,10 @@
 import React from "react";
 import Joi from "joi-browser";
 import Form from "../components/common/form";
+import http from "../services/httpService";
+import logger from "../services/logService";
+import { apiUrl } from "../config.json";
+import { toast } from "react-toastify";
 
 class ContactPage extends Form {
   state = {
@@ -34,8 +38,22 @@ class ContactPage extends Form {
   };
 
   doSubmit = async () => {
-    // Send the email
-    console.log(this.state.data);
+    try {
+      const { data } = await http.post(apiUrl + "/mail", this.state.data);
+      toast.success(data);
+      this.setState({
+        data: {
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: ""
+        }
+      });
+    } catch (ex) {
+      logger.log(ex);
+      toast.error("An unexpected error occurred.");
+    }
   };
 
   render() {
