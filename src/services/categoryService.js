@@ -5,7 +5,10 @@ export function getCategories() {
   return http.get(apiUrl + "/categories");
 }
 
-export function getCategory(categoryName) {
-  const categories = getCategories();
-  return categories.filter(category => category.name === categoryName);
+export async function getCategory(categoryName) {
+  const { data: categories } = await getCategories();
+  const category = categories.filter(
+    category => category.name === categoryName
+  );
+  return category[0];
 }
