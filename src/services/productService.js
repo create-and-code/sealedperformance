@@ -5,7 +5,7 @@ export function getProducts() {
   return http.get(apiUrl + "/products");
 }
 
-export function getProduct(id) {
-  const products = getProducts();
+export async function getProduct(id) {
+  const { data: products } = await getProducts();
   return products.find(p => p._id === id);
 }

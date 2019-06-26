@@ -2,13 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import PaypalExpressBtn from "react-paypal-express-checkout";
-
-const CLIENT = {
-  sandbox:
-    "ATpskLovJnjUF8w_zPbgzUIIul519nbDXpi4sPUgPgGo9F4sOifKBMIi6dax4fPIsVJtPv_07bUPdnAe",
-  production:
-    "ATpskLovJnjUF8w_zPbgzUIIul519nbDXpi4sPUgPgGo9F4sOifKBMIi6dax4fPIsVJtPv_07bUPdnAe"
-};
+import http from "../../services/httpService";
+import { apiUrl } from "../../config.json";
 
 function sort(items) {
   return items.sort((a, b) => a._id - b._id);
@@ -18,9 +13,40 @@ class Basket extends Component {
   state = {
     delivery: 0
   };
+
   render() {
     const { addToBasket, removeFromBasket, removeAllFromBasket } = this.props;
     const { items, total } = this.props.basket;
+
+    const onSuccess = payment => {
+      console.log("The payment was succeeded!", payment);
+      const order = {
+        items: items,
+        payment: payment
+      };
+      http.post(apiUrl + "/orders", order).then(res => console.log(res));
+    };
+
+    const onCancel = data => {
+      console.log("The payment was cancelled!", data);
+      // toast 'The payment was cancelled!'
+    };
+
+    const onError = err => {
+      console.log("Error!", err);
+      // toast the error
+    };
+
+    let env = "sandbox";
+    let currency = "GBP";
+
+    const client = {
+      sandbox:
+        "ATpskLovJnjUF8w_zPbgzUIIul519nbDXpi4sPUgPgGo9F4sOifKBMIi6dax4fPIsVJtPv_07bUPdnAe",
+      production:
+        "ATpskLovJnjUF8w_zPbgzUIIul519nbDXpi4sPUgPgGo9F4sOifKBMIi6dax4fPIsVJtPv_07bUPdnAe"
+    };
+
     return (
       <React.Fragment>
         {items.length === 0 && (
@@ -128,9 +154,13 @@ class Basket extends Component {
               </div>
 
               <PaypalExpressBtn
-                client={CLIENT}
-                currency={"GBP"}
+                env={env}
+                client={client}
+                currency={currency}
                 total={(total + this.state.delivery).toFixed(2)}
+                onError={onError}
+                onSuccess={onSuccess}
+                onCancel={onCancel}
               />
             </div>
           </div>

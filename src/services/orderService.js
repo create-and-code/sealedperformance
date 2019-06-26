@@ -2,9 +2,10 @@ import http from "./httpService";
 import { apiUrl } from "../config.json";
 
 export function getOrders(userId) {
-  return http.get(apiUrl + "/orders/", userId);
+  return http.get(apiUrl + "/orders", userId);
 }
 
-export function getOrder(orderId) {
-  return http.get(apiUrl + "/order/", orderId);
-}
+// export async function getOrder(orderId) {
+//   const { data: products } = await getProducts();
+//   return products.find(p => p._id === id);
+// }

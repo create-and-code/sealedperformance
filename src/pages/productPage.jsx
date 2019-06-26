@@ -19,8 +19,6 @@ class ProductPage extends Component {
   async populateProduct() {
     try {
       const productId = this.props.match.params.id;
-      if (productId === "new") return;
-
       const product = await getProduct(productId);
       this.setState({ product });
     } catch (ex) {

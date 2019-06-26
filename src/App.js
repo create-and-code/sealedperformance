@@ -44,19 +44,15 @@ class App extends Component {
             <Route exact path="/basket" component={BasketPage} />
             <Route exact path="/order/:id" component={OrdersPage} />
 
-            <Route exact path="/account" user={user} component={BasketPage} />
-
             <Route
               exact
               path="/account/orders"
               render={props => <MyOrdersPage {...props} user={user} />}
             />
-
             <Route
               exact
               path="/account/orders/:id"
-              user={user}
-              component={ViewOrderPage}
+              render={props => <ViewOrderPage {...props} user={user} />}
             />
 
             <Route exact path="/register" component={RegisterForm} />
