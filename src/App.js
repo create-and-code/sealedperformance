@@ -13,15 +13,23 @@ import Footer from "./components/footer";
 import ProductPage from "./pages/productPage";
 import BasketPage from "./pages/basketPage";
 import OrdersPage from "./pages/ordersPage";
+import auth from "./services/authService";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.scss";
 
 class App extends Component {
+  state = {};
+
+  componentDidMount() {
+    const user = auth.getCurrentUser();
+    this.setState({ user });
+  }
   render() {
+    const { user } = this.state;
     return (
       <React.Fragment>
         <ToastContainer />
-        <Header />
+        <Header user={user} />
         <main>
           <Switch>
             <Route exact path="/" component={HomePage} />

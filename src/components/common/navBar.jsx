@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
 const NavBar = ({ user, basket }) => {
+  console.log(user);
   return (
     <React.Fragment>
       <nav className="nav">
@@ -11,7 +12,7 @@ const NavBar = ({ user, basket }) => {
             <React.Fragment>
               <li className="nav__item">
                 <NavLink className="nav-link" to="/profile">
-                  {user.name}
+                  Hi, {user.name}
                 </NavLink>
               </li>
               <li className="nav__item">

@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "./common/navBar";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ user }) => {
   return (
     <header className="header">
       <div className="container">
@@ -13,7 +13,7 @@ const Header = () => {
             </Link>
           </div>
           <div className="col-9">
-            <NavBar />
+            <NavBar user={user} />
           </div>
         </div>
       </div>
