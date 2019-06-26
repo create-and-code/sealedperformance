@@ -17,7 +17,6 @@ class Order extends Component {
   }
 
   renderOrder() {
-    console.log(this.state.order);
     const { name, email, order_items } = this.state.order;
 
     return (

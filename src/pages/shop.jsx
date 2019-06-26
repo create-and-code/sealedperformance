@@ -23,7 +23,6 @@ class Shop extends Component {
   async populateCategory() {
     try {
       const categoryName = this.props.match.params.category;
-      console.log(categoryName);
       if (categoryName !== undefined) {
         const category = await getCategory(categoryName);
         this.setState({

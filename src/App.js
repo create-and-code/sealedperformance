@@ -13,6 +13,8 @@ import Footer from "./components/footer";
 import ProductPage from "./pages/productPage";
 import BasketPage from "./pages/basketPage";
 import OrdersPage from "./pages/ordersPage";
+import MyOrdersPage from "./pages/account/MyOrdersPage";
+import ViewOrderPage from "./pages/account/ViewOrderPage";
 import auth from "./services/authService";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.scss";
@@ -20,10 +22,11 @@ import "./App.scss";
 class App extends Component {
   state = {};
 
-  componentDidMount() {
-    const user = auth.getCurrentUser();
+  async componentDidMount() {
+    const user = await auth.getCurrentUser();
     this.setState({ user });
   }
+
   render() {
     const { user } = this.state;
     return (
@@ -35,11 +38,26 @@ class App extends Component {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/shop" component={Shop} />
             <Route exact path="/shop/:category" component={Shop} />
-            <Route path="/shop/product/:id" component={ProductPage} />
+            <Route exact path="/shop/product/:id" component={ProductPage} />
             <Route exact path="/contact" component={ContactPage} />
 
             <Route exact path="/basket" component={BasketPage} />
-            <Route path="/orders/:id" component={OrdersPage} />
+            <Route exact path="/order/:id" component={OrdersPage} />
+
+            <Route exact path="/account" user={user} component={BasketPage} />
+
+            <Route
+              exact
+              path="/account/orders"
+              render={props => <MyOrdersPage {...props} user={user} />}
+            />
+
+            <Route
+              exact
+              path="/account/orders/:id"
+              user={user}
+              component={ViewOrderPage}
+            />
 
             <Route exact path="/register" component={RegisterForm} />
             <Route exact path="/login" component={LoginForm} />
