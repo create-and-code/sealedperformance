@@ -10,7 +10,7 @@ const NavBar = ({ user, basket }) => {
           {user && (
             <React.Fragment>
               <li className="nav__item">
-                <NavLink className="nav-link" to="/profile">
+                <NavLink className="nav-link" to="/account">
                   Hi, {user.name}
                 </NavLink>
               </li>

@@ -3,17 +3,28 @@ import { getOrders } from "../../services/orderService";
 
 class MyOrdersPage extends Component {
   state = {
-    orders: []
+    orders: [],
+    userId: null
   };
 
   async componentDidUpdate() {
-    const { data } = await getOrders(this.props.user._id);
-    this.setState({ orders: data });
+    this.setState({ userId: this.props.user._id });
+  }
+
+  async componentDidMount() {
+    setTimeout(
+      async function() {
+        const { data } = await getOrders(this.state.userId);
+        console.log(data);
+        this.setState({ orders: data });
+      }.bind(this),
+      1000
+    );
   }
 
   render() {
     return (
-      <div>
+      <div className="container page">
         <h1>My Orders</h1>
         <table>
           <tr>

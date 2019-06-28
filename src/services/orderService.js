@@ -2,7 +2,7 @@ import http from "./httpService";
 import { apiUrl } from "../config.json";
 
 export function getOrders(userId) {
-  return http.get(apiUrl + "/orders", userId);
+  return http.get(apiUrl + "/orders/" + userId);
 }
 
 // export async function getOrder(orderId) {
